@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ./../../
+      dockerfile: docker/development/app/Dockerfile
+    volumes:
+      - ./../../app:/app
+      - /app/tmp
+    environment:
+      GO_ENV: development
+    ports:
+      - '8080:8080'
